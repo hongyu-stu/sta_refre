@@ -1,0 +1,24 @@
+fig, axs = plt.subplots(1 , 2, figsize=(10,4))
+axs[0].bar(index, salary1, width=0.4, label= 'salary1')
+axs[0].bar(index, salary2, width=0.4, bottom=salary1, label= 'salary2')
+axs[0].bar(index, salary3, width=0.4, bottom=salary2+salary1, label= 'salary3')
+axs[0].set_ylim(0, 30000)
+axs[0].set_xticklabels(name, rotation=90)
+axs[0].legend(loc='upper left',  shadow=True)
+
+summ = salary1+salary2+salary3
+percentage1 = salary1/summ
+percentage2 = salary2/summ
+percentage3 = salary3/summ
+
+axs[1].bar(index, percentage1, width=0.4, label= salary1)
+axs[1].bar(index, percentage2, width=0.4, bottom=percentage1, label= salary2)
+axs[1].bar(index, percentage3, width=0.4, bottom=percentage1+percentage2, label= salary3)
+axs[1].set_ylim(0,1)
+axs[1].set_xticklabels(name, rotation=90)
+
+plt.savefig('9.tiff', dpi=300)
+plt.show()
+————————————————
+版权声明：本文为CSDN博主「Sound_of_ Silence」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/weixin_44521703/article/details/101827068
